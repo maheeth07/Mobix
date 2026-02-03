@@ -6,6 +6,7 @@ const app=express();
 const cookieParser=require('cookie-parser');
 const connectDB=require('./db/db');
 const userRoutes=require('./routes/user.routes');
+const partnerRoutes=require('./routes/partner.routes');
 
 connectDB();
 
@@ -17,5 +18,5 @@ app.get('/',(req,res)=>{
     res.send('Hello, World!');
 });
 app.use('/user',userRoutes);
-
+app.use('/partner',partnerRoutes);
 module.exports=app;
